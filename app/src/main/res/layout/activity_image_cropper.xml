@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<com.edmodo.cropper.CropImageView
+         android:id="@+id/CropImageView"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_marginTop="25dp"
+         android:layout_marginBottom="25dp"
+         android:visibility="gone"
+         android:layout_above="@+id/button_crop"/>-->
+
+    <com.theartofdev.edmodo.cropper.CropImageView
+        android:id="@+id/CropImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="25dp"
+        android:layout_above="@+id/button_crop"/>
+
+    <ProgressBar android:id="@+id/progress" style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/button_crop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/action_crop"
+        android:layout_alignParentBottom="true"
+        android:enabled="false"
+        android:textColor="#fff"
+        android:background="@color/colorAccent"
+    />
+</RelativeLayout>

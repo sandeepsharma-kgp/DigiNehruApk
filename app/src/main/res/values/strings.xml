@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DigiNehru</string>
+    <string name="field_required">This field is required.</string>
+    <string name="ok">Ok</string>
+    <string name="message_permission_storage">Need storage permission.</string>
+    <string name="action_crop">crop</string>
+</resources>
