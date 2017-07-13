@@ -30,6 +30,9 @@
         <activity
             android:name=".Activity.DashboardActivity"
             android:label="Dashboard" />
+        <activity
+            android:name=".Activity.StaffDashboardActivity"
+            android:label="StaffDashboard" />
     </application>
 
 </manifest>

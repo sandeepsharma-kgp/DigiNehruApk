@@ -93,6 +93,8 @@ public class StartActivity extends AppCompatActivity implements View.OnClickList
         if (eventType == AppConstants.LOGIN_NETWORK) {
             if (result.getReponseCode() == 200) {
                 if (radio_type.getCheckedRadioButtonId() == R.id.radio_staff) {
+                    Intent intent = new Intent(this, StaffDashboardActivity.class);
+                    startActivity(intent);
                 } else {
                     Intent intent = new Intent(this, DashboardActivity.class);
                     startActivity(intent);
