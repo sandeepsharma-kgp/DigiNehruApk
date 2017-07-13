@@ -145,6 +145,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         if (eventType == AppConstants.SIGN_UP_NETWORK) {
             ProjectUtil.showToast(this, result.getErrorText());
             if (result.getReponseCode() == 200) {
+                Intent intent = new Intent(this, StartActivity.class);
+                startActivity(intent);
 
             }
         }

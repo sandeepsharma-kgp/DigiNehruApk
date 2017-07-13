@@ -14,15 +14,11 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Activity.SignUpActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".Activity.ImageCropperActivity"
             android:screenOrientation="portrait" />
-
         <activity
-
             android:name=".Activity.StartActivity"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -31,6 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Activity.DashboardActivity"
+            android:label="Dashboard" />
     </application>
 
 </manifest>
