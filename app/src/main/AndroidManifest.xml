@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".Activity.SignUpActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activity.ImageCropperActivity"
             android:screenOrientation="portrait" />
@@ -33,6 +33,7 @@
         <activity
             android:name=".Activity.StaffDashboardActivity"
             android:label="StaffDashboard" />
+        <activity android:name=".Activity.MenuActivity"></activity>
     </application>
 
 </manifest>
