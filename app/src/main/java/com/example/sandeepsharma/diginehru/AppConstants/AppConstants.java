@@ -25,7 +25,7 @@ public class AppConstants {
     public static final String RES_STR = "res_str";
 
     //MAIN_URL
-    public static final String MAIN_URL = "http://35.154.34.250:8000/";
+    public static final String MAIN_URL = "http://13.126.109.166:8080/";
 
 
     //NETWORK CONSTANT
