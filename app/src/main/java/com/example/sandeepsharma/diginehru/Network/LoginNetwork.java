@@ -42,18 +42,35 @@ public class LoginNetwork implements com.android.volley.Response.Listener, com.a
     ProgressDialog progressDialog;
     String mToken ;
     boolean mMealType;
+    boolean mNext;
     AlertDialog.Builder mAlertDialog_Builder;
     String android_id;
 
-    public LoginNetwork(Activity activity, int eventType, String token, boolean type) {
+    public LoginNetwork(Activity activity, int eventType, String token, boolean type, boolean nxt) {
         mActivity = activity;
         mEventType = eventType;
         mToken = token;
         mMealType = type;
+        mNext = nxt;
         android_id = Secure.getString(mActivity.getApplicationContext().getContentResolver(),
                 Secure.ANDROID_ID);
         callBack = (NetworkCallBack) activity;
         progressDialog = ProgressDialog.show(activity, "Please wait", null, false);
+//        final ProgressDialog progress = new ProgressDialog(activity.getBaseContext());
+//        progress.setTitle("Connecting");
+//        progress.setMessage("Please wait while we connect to devices...");
+//        progress.show();
+
+        Runnable progressRunnable = new Runnable() {
+
+            @Override
+            public void run() {
+                progressDialog.cancel();
+            }
+        };
+
+        Handler pdCanceller = new Handler();
+        pdCanceller.postDelayed(progressRunnable, 5000);
         VolleyRequestQueue.getInstance(activity).addToRequestQueue(new VolleyPostRequest(this, AppConstants.MAIN_URL + "studentmeal/mealcount/", getRequestMap(), activity));
     }
 
@@ -63,6 +80,11 @@ public class LoginNetwork implements com.android.volley.Response.Listener, com.a
             map.put("vn", "VE");
         } else {
             map.put("vn", "NV");
+        }
+        if (mNext) {
+            map.put("nxt", "1");
+        } else {
+            map.put("nxt", "0");
         }
         map.put("id", mToken);
         map.put("d_id", android_id);
@@ -107,7 +129,7 @@ public class LoginNetwork implements com.android.volley.Response.Listener, com.a
             public void run(){
                 alertDialog.dismiss();
             }
-        }, 5000);
+        }, 2500);
 
         if (progressDialog != null) {
             progressDialog.dismiss();
@@ -138,7 +160,7 @@ public class LoginNetwork implements com.android.volley.Response.Listener, com.a
             public void run(){
                 alertDialog.dismiss();
             }
-        }, 5000);
+        }, 2500);
         if (progressDialog != null) {
             progressDialog.dismiss();
         }
